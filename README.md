@@ -1,7 +1,6 @@
 # Lab303_Hw4
 
 - Author: Gin
-- Created at: 2021-08-26 19:34:21
 
 蒸蛋
 
