@@ -285,6 +285,13 @@ while cap.isOpened():  # Capture frame-by-frame
             ledA,ledB,ledC,ledD = MOTION_STATE_LEDs(state)
             write_Serial(1,2,1,'h',pwmL,pwmR,ledA,ledB,ledC,ledD)
             
+        while ser.in_waiting:
+            echoStr = ser.readline().decode()
+            print('arduino:', echoStr)
+            if echoStr == "-------- STOP --------":
+                print("STOP")
+                write_Serial(1,2,0,0,0,0,2,2,2,2)
+                break
             
         time.sleep(0.1)
 
