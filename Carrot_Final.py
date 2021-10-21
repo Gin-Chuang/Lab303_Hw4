@@ -8,7 +8,7 @@ import sys
 MODE = 'TX2'
 #MODE = 'debug'
 
-SKIP = True
+SKIP = False
 
 camera_port = 0
 
