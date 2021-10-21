@@ -30,7 +30,7 @@ STOP_1_delay = 5
 
 GRAB_delay = 10
 
-FORWARD_2_delay = 10
+FORWARD_2_delay = 8
 FORWARD_2_pwm = 60
 
 STOP_1_delay = 5
@@ -576,7 +576,7 @@ while cap.isOpened():  # Capture frame-by-frame
             ledA,ledB,ledC,ledD = MOTION_STATE_LEDs(state)
             write_Serial(1,2,0,0,pwmL,pwmR,ledA,ledB,ledC,ledD)
             print("Start GRABBING Fruit...")
-            #grab_Fruit()
+            grab_Fruit()
             print("Fruit GRABBED!")        
             time.sleep(GRAB_delay)
             state = "FORWARD_2"
@@ -619,7 +619,7 @@ while cap.isOpened():  # Capture frame-by-frame
             pwmL,pwmR = MOTION_STATE_PWM(state)
             write_Serial(1,2,0,0,pwmL,pwmR,ledA,ledB,ledC,ledD)
             print("Start DROPPING Fruit...")
-            #drop_Fruit()
+            drop_Fruit()
             print("Fruit DROPPED!")
             time.sleep(DROP_delay)
             state = 'FORWARD_3'
